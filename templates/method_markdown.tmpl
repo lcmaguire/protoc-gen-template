@@ -1,0 +1,22 @@
+## {{ .MethodName}}
+
+
+input message {{.Method.Input.GoIdent.GoName}}
+output message {{.Method.Output.GoIdent.GoName}}
+
+
+### Input
+
+|  Field  |  Value  |
+|---|---|
+{{- range $index, $element := .Method.Input.Fields }}
+        | {{$element.GoName}} |   |
+{{- end}}
+
+### Output
+
+|  Field  |  Value  |
+|---|---|
+{{- range $index, $element := .Method.Output.Fields }}
+        | {{$element.GoName}} |   |
+{{- end}}

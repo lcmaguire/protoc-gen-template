@@ -1,0 +1,17 @@
+generations:
+  - outPath: "{{.FileGoPkgName}}/{{.MethodName}}.go"
+    templatePath: "templates/unary_method.tmpl"
+    type: "method"
+  - outPath: "docs/{{.Method.Desc.FullName}}.md"
+    templatePath: "templates/method_markdown.tmpl"
+    type: "method"
+  - outPath: "{{.FileGoPkgName}}/{{.ServiceName}}.go"
+    templatePath: "templates/service_go.tmpl"
+    type: "service"
+  - outPath: "{{.File.GoPackageName}}/doc.go"
+    templatePath: "templates/file_go.tmpl"
+    type: "file"
+  ## generate a file that imports all messages.
+  - outPath: "imports/imports.go"
+    templatePath: "templates/all_files_go_import.tmpl"
+    type: "all"
